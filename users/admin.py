@@ -5,7 +5,6 @@ from .models import User
 
 class CustomUserAdmin(UserAdmin):
 
-    # 👇 Create user form me kya fields dikhenge
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -13,7 +12,6 @@ class CustomUserAdmin(UserAdmin):
         }),
     )
 
-    # 👇 Edit user form me kya dikhega
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         ('Personal Info', {'fields': ('email',)}),
