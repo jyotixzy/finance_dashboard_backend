@@ -16,11 +16,11 @@ class FinancialRecordViewSet(viewsets.ModelViewSet):
         user = self.request.user
         queryset = FinancialRecord.objects.all()
 
-        # 🔐 Role-based access
+        # Role-based access
         if user.role == 'viewer':
             queryset = queryset.filter(user=user)
 
-        # 🔍 Filters
+        # Filters
         type_param = self.request.query_params.get('type')
         category = self.request.query_params.get('category')
         start_date = self.request.query_params.get('start_date')
